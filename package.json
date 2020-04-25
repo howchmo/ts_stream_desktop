@@ -1,0 +1,31 @@
+{
+  "name": "HowVidStream",
+  "version": "1.0.0",
+  "description": "Stream real-time video in nodejs using ffmpeg, websockets and HTML5.",
+  "main": "webserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webserver": "node webserver.js",
+    "websocketserver": "node websocketserver.js 12345",
+    "streamaudio": "",
+    "streamdesktop": "ffmpeg -f x11grab -r 24 -s 1920x1080 -i :0.0 -f mpegts -codec:v mpeg1video -s 1920x1080 -b:v 100k -bf 0 http://localhost:8082/12345/1920/1080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/howchmo/HowVidStream.git"
+  },
+  "keywords": [
+    "nodejs",
+    "streaming"
+  ],
+  "author": "Howard Mall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/howchmo/HowVidStream/issues"
+  },
+  "homepage": "https://github.com/howchmo/HowVidStream#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ws": "^1.1.1"
+  }
+}
